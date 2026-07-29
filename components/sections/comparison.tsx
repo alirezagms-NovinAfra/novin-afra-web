@@ -12,9 +12,10 @@ const solutions = {
 };
 
 function ComparisonVisual({ kind }: { kind: "wordpress" | "custom" }) {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
   const image = kind === "wordpress"
-    ? "/comparison/wordpress-transparent.png"
-    : "/comparison/custom-transparent.png";
+    ? `${basePath}/comparison/wordpress-transparent.png`
+    : `${basePath}/comparison/custom-transparent.png`;
   const alt = kind === "wordpress" ? "نمونه تصویری طراحی سایت وردپرسی" : "نمونه تصویری طراحی سایت اختصاصی";
 
   return (
